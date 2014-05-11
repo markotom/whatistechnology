@@ -1,0 +1,16 @@
+{
+  "name": "whatistechnology",
+  "version": "0.0.1",
+  "authors": [
+    "Marco Godínez <markotom@gmail.com>"
+  ],
+  "description": "What is technology by Twitter?",
+  "main": "app.js",
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.1.1",
+    "knockout.js": "~3.0.0",
+    "momentjs": "~2.6.0"
+  }
+}

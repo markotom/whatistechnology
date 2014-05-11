@@ -1,0 +1,46 @@
+doctype html
+html
+  head
+    title Tecnología según Twitter
+    link(rel='stylesheet', href='/css/style.css')
+    script(src='/components/jquery/dist/jquery.min.js')
+    script(src='/components/bootstrap/dist/js/bootstrap.min.js')
+    script(src='/components/momentjs/min/moment-with-langs.min.js')
+    script(type='text/javascript').
+      moment.lang('es');
+    script(src='/socket.io/socket.io.js')
+    script(type='text/javascript').
+      var socket = io.connect('#{url}');
+    script(src='/components/knockout.js/knockout.js')
+    script(src='/js/models/twitter.js')
+  body
+    #wrap
+      .jumbotron
+        .container
+          h1
+            = 'Tecnología '
+            small.text-muted según Twitter
+
+      #main
+        .container
+          .lead.text-muted(data-bind='if: tweets().length == 0') Espera un momento, nadie está twitteando sobre "tecnología"...
+        .tweets(data-bind='foreach: tweets.slice(0).reverse()')
+          .tweet.container
+            a.avatar.pull-left(data-bind="attr: { href: 'http://twitter.com/' + user.screen_name }")
+              img.img-thumbnail.img-responsive(data-bind='attr: { src: user.profile_image_url }', alt="")
+            a(data-bind="attr: { href: 'http://twitter.com/' + user.screen_name }, text: user.name").author
+            = ' '
+            small.text-muted
+              span(data-bind='text: user.screen_name')
+              = ' - '
+              span(data-bind='text: $parent.moment(created_at)')
+            p.text(data-bind='text: text')
+
+          hr
+
+    #footer
+      .container
+        = 'Experimento por '
+        a(href="http://twitter.com/markotom") @markotom
+        = ' para los del '
+        strong #SeminarioTF

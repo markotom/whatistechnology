@@ -1,0 +1,26 @@
+{
+  "name": "whatistechnology",
+  "version": "0.0.1",
+  "description": "What is technology by Twitter?",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Marco Godínez <markotom@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "requirejs": "^2.1.11",
+    "underscore": "^1.6.0",
+    "twitter": "^0.2.9",
+    "express": "^4.1.2",
+    "socket.io": "^0.9.16",
+    "jade": "^1.3.1"
+  },
+  "devDependencies": {
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt": "^0.4.4",
+    "load-grunt-tasks": "^0.4.0",
+    "grunt-contrib-less": "^0.11.0",
+    "grunt-express-server": "^0.4.17"
+  }
+}
